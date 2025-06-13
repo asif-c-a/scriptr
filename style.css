@@ -38,7 +38,11 @@ body {
     display: inherit;
 }
 
-.dialog-text .dialog-button {
+.dialog-action:hover .dialog-button {
+    display: inherit;
+}
+
+.dialog-button {
     display: none;
     background-color: #00000000;
     color: white;
@@ -50,28 +54,29 @@ body {
     margin-left: 10px;
 }
 
-.dialog-text .dialog-button svg {
+.dialog-button svg {
     fill: #888888;
 }
 
-.dialog-text .dialog-button:hover {
+.dialog-button:hover {
     border: 1px solid #FFFFFF;
 }
 
-.dialog-text .dialog-button:hover svg {
+.dialog-button:hover svg {
    fill: #FFFFFF;
 }
 
-.dialog-text .delete:hover {
+.delete:hover {
     border: 1px solid #fc4e4e;
 }
 
-.dialog-text .delete:hover svg {
+.delete:hover svg {
     fill: #fc4e4e;
 }
 
 .dialog-action {
     width: 100%;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
