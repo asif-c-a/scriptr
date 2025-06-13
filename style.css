@@ -1,9 +1,11 @@
 body {
     background-color: #1b1b1b;
-    margin: 10px;
+    
+}
+
+.script-editor {
     font-family: "Roboto Mono";
     color: white;
-    padding-bottom: 5%;
 }
 
 .script-area {
@@ -12,18 +14,66 @@ body {
     width: 100%;
     height: 80%;
     justify-content: space-around;
+    overflow-y: auto;
+    
 }
 
 .script-dialog {
     width: 50%;
     height: auto;
-    background-color: grey;
     align-self: center;
 }
 
+.dialog {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .dialog-text {
+    width: 80%;
+}
+
+.dialog-text:hover .dialog-button {
+    display: inherit;
+}
+
+.dialog-text .dialog-button {
+    display: none;
+    background-color: #00000000;
+    color: white;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    float: right;
+    margin-left: 10px;
+}
+
+.dialog-text .dialog-button svg {
+    fill: #888888;
+}
+
+.dialog-text .dialog-button:hover {
+    border: 1px solid #FFFFFF;
+}
+
+.dialog-text .dialog-button:hover svg {
+   fill: #FFFFFF;
+}
+
+.dialog-text .delete:hover {
+    border: 1px solid #fc4e4e;
+}
+
+.dialog-text .delete:hover svg {
+    fill: #fc4e4e;
+}
+
+.dialog-action {
     width: 100%;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .input-area {
@@ -46,14 +96,24 @@ body {
 
 .character-select {
     height: 100%;
-    aspect-ratio: 1/1;
     font-size: 100%;
     font-weight: bold;
-    border-radius: 100%;
+    border-radius: 10px;
     margin-right: 15px;
     background-color: #00000000;
     color: white;
     border: 2px solid #888888;
+    padding-inline: 10px;
+}
+
+.character-select:hover {
+    border: 2px solid #FFFFFF;
+}
+
+.rounded {
+    padding-inline: 0;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
 }
 
 .selected{
@@ -94,4 +154,10 @@ body {
     color: white;
     border: 1px solid #888888;
     border-radius: 5px;
+}
+
+.input-dialog button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
 }
