@@ -141,14 +141,17 @@ function storeData()
 	var scriptData = [];
 	scriptData.push(script, scriptper, characters, charactersAbb);
 
-	localStorage.setItem('scriptData', JSON.stringify(scriptData));
+	var dataName = scenes[currentScene];
+	localStorage.setItem(dataName, JSON.stringify(scriptData));
 }
 
 function rememberData()
 {
-	if (localStorage.getItem('scriptData') != null)
+	var dataName = scenes[currentScene];
+
+	if (localStorage.getItem(dataName) != null)
 	{
-		var scriptData = JSON.parse(localStorage.getItem('scriptData'));
+		var scriptData = JSON.parse(localStorage.getItem(dataName));
 		
 		if(scriptData[0] != null && scriptData[1] != null && scriptData[2] != null && scriptData[3] != null)
 		{
@@ -162,6 +165,11 @@ function rememberData()
 			characters = [];
 			charactersAbb = [];
 		}
+	}else{
+		script = [];
+		scriptper = [];
+		characters = [];
+		charactersAbb = [];
 	}
 }
 
@@ -286,6 +294,12 @@ function openScene(index)
 {
 	currentScene = index;
 	setSceneName(index);
+
+	closeNewSceneMenu();
+	updateScenes();
+	updateScenesTab();
+	updateScript();
+	updateCharacter();
 }
 
 function newScene()
